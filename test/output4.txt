@@ -1,0 +1,21 @@
+Enter the number of nodes in the tree: Enter 7 values for the tree:
+Original Tree:
+      10
+      / \
+     /   \
+    5    20
+   / \     \
+  4   8    25
+ /
+3
+
+Enter 7 values for the array:
+
+Reconstructed Tree:
+      5
+     / \
+    3   6
+   / \   \
+  2   4   7
+ /
+1
