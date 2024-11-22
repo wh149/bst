@@ -234,7 +234,7 @@ clean:
 ### 测试运行
 
    ```bash
-   $ ./test.sh
+   $ bash test.sh
    ```
 
 
