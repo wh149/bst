@@ -3,6 +3,6 @@
 
 
 
-void bstInOrderReplace(struct node *tree, int *arr) {
+void bstInOrderReplace(struct node *tree, int *arr, int n) {
 
 }
