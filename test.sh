@@ -18,7 +18,7 @@ if diff -q test/output1.txt test/test1Exp.txt > /dev/null; then
 else
     echo "Test 1 failed!"
     echo "Diff:"
-    diff test/output1.txt test/test1Exp.txt.txt
+    diff test/output1.txt test/test1Exp.txt
 fi
 
 # 测试用例 2
@@ -40,4 +40,14 @@ else
     echo "Test 3 failed!"
     echo "Diff:"
     diff test/output3.txt test/test3Exp.txt
+fi
+
+echo "Running Test 4..."
+./main < test/test4Input.txt > test/output4.txt
+if diff -q test/output4.txt test/test4Exp.txt > /dev/null; then
+    echo "Test 4 passed!"
+else
+    echo "Test 4 failed!"
+    echo "Diff:"
+    diff test/output4.txt test/test4Exp.txt
 fi
