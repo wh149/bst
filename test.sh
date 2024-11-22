@@ -18,7 +18,7 @@ if diff -q test/output1.txt test/test1Exp.txt > /dev/null; then
 else
     echo "Test 1 failed!"
     echo "Diff:"
-    diff test/output1.txt test/t1exp.txt
+    diff test/output1.txt test/test1Exp.txt.txt
 fi
 
 # 测试用例 2

@@ -13,12 +13,12 @@ Original Tree:
 Enter 9 values for the array:
 
 Reconstructed Tree:
-        6
+        5
        / \
       /   \
      /     \
-    4       9
+    3       8
    / \     / \
-  3   5   8  10
+  2   4   7   9
  /       /
-2       7
+1       6
