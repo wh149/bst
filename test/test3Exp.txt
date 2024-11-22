@@ -1,0 +1,24 @@
+Enter the number of nodes in the tree: Enter 9 values for the tree:
+Original Tree:
+        5
+       / \
+      /   \
+     /     \
+    3       8
+   / \     / \
+  2   4   7   9
+ /       /
+1       6
+
+Enter 9 values for the array:
+
+Reconstructed Tree:
+        6
+       / \
+      /   \
+     /     \
+    8       3
+   / \     / \
+  9   7   4   2
+ /       /
+10      5
