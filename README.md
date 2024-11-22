@@ -1,69 +1,113 @@
-以下是用 Markdown 格式撰写的题目要求文档：
+以下是完整的 `README.md` 文件内容，描述如何使用项目并运行测试。
 
 ---
 
-# 二叉搜索树 (BST) 节点值替换任务
+# Binary Search Tree (BST) Replacement
 
 ## 任务描述
 
-实现一个功能模块 `bstReplace`，用于对给定的二叉搜索树 (BST) 进行中序遍历，并用一个数组的值依次替换树中节点的值，同时保持树的原始结构不变。
-
-## 输入输出要求
-
-### 输入
-
-1. **树的节点数**：
-   - 用户输入一个正整数 `n` 表示 BST 中的节点数。
-2. **树的节点值**：
-   - 用户依次输入 `n` 个整数，按照顺序插入到 BST 中，构建原始的二叉搜索树。
-3. **数组的值**：
-   - 用户输入 `n` 个整数，组成替换用的数组。
-
-### 输出
-
-1. **原始树结构**：
-   - 按照二叉搜索树规则构建完成后，输出其结构（例如：中序遍历）。
-2. **重新构建的树结构**：
-   - 用数组的值替换 BST 节点值后，输出树的结构，树的形状保持不变。
+本项目实现了一个模块，用于对二叉搜索树 (BST) 进行节点值的替换。通过输入数组中的值，按照中序遍历的顺序替换 BST 的节点值，同时保持树的原始结构。
 
 ---
 
-## 程序接口
+## 功能概述
 
-`bstReplace` 模块包含以下函数：
+### 输入
+1. **树的节点数**：一个正整数 `n`，表示 BST 中的节点数量。
+2. **树的节点值**：按照用户输入顺序插入到 BST 中。
+3. **替换数组**：包含 `n` 个整数，用于替换树节点的值。
 
-### `bstInOrderReplace`
+### 输出
+1. **原始树**：
+   - 显示构建完成的原始树结构。
+2. **重构后的树**：
+   - 按中序遍历的顺序，用替换数组的值替换原始树节点值后，显示新的树结构。
 
-#### 函数原型
+---
 
-```c
-void bstInOrderReplace(struct node *tree, int *arr);
+## 文件结构
+
+```
+.
+├── main.c             # 主程序入口
+├── bst.c              # 二叉搜索树相关操作实现
+├── bst.h              # 二叉搜索树头文件
+├── bstReplace.c       # 节点替换模块实现
+├── bstReplace.h       # 节点替换模块头文件
+├── test/
+│   ├── t1Input.txt    # 测试用例 1 的输入
+│   ├── t1Exp.txt      # 测试用例 1 的期望输出
+│   ├── t2Input.txt    # 测试用例 2 的输入
+│   ├── t2Exp.txt      # 测试用例 2 的期望输出
+│   ├── t3Input.txt    # 测试用例 3 的输入
+│   ├── t3Exp.txt      # 测试用例 3 的期望输出
+├── Makefile           # 编译脚本
+└── README.md          # 项目说明文档
 ```
 
-#### 功能说明
+---
 
-- **输入**：
-  - `tree`：指向 BST 根节点的指针。
-  - `arr`：一个整数数组，包含替换节点值的元素。
-- **输出**：
-  - 直接修改 BST 中每个节点的值，用数组中的值按中序遍历顺序替换节点值。
+## 编译与运行
+
+### 编译项目
+确保您已安装 `clang` 或兼容的 C 编译器。在项目根目录下运行以下命令：
+
+```bash
+make
+```
+
+### 运行程序
+运行程序时可以手动输入数据，也可以通过文件输入：
+
+1. **交互式输入**：
+   ```bash
+   ./main
+   ```
+
+2. **文件输入**：
+   ```bash
+   ./main < test/t1Input.txt
+   ```
+
+### 清理项目
+清理生成的二进制文件：
+
+```bash
+make clean
+```
 
 ---
 
 ## 测试用例
 
-### 测试用例 1：右链状树
+以下是示例测试用例，位于 `test/` 目录。
 
-#### 输入：
+### 测试用例 1 (右链状树)
+
+#### 输入文件 `t1Input.txt`：
 ```
-Enter the number of nodes in the tree: 9
-Enter 9 values for the tree:
-1 2 3 4 5 6 7 8 9
-Enter 9 values for the array:
-2 3 4 5 6 7 8 9 10
+9
+1
+2
+3
+4
+5
+6
+7
+8
+9
+2
+3
+4
+5
+6
+7
+8
+9
+10
 ```
 
-#### 输出：
+#### 期望输出文件 `t1Exp.txt`：
 ```
 Original Tree:
 1
@@ -106,18 +150,32 @@ Reconstructed Tree:
 
 ---
 
-### 测试用例 2：左链状树
+### 测试用例 2 (左链状树)
 
-#### 输入：
+#### 输入文件 `t2Input.txt`：
 ```
-Enter the number of nodes in the tree: 9
-Enter 9 values for the tree:
-9 8 7 6 5 4 3 2 1
-Enter 9 values for the array:
-2 3 4 5 6 7 8 9 10
+9
+9
+8
+7
+6
+5
+4
+3
+2
+1
+10
+9
+8
+7
+6
+5
+4
+3
+2
 ```
 
-#### 输出：
+#### 期望输出文件 `t2Exp.txt`：
 ```
 Original Tree:
                 9
@@ -139,39 +197,53 @@ Original Tree:
 1
 
 Reconstructed Tree:
-                2
+               10
                /
-              3
+              9
              /
-            4
+            8
            /
-          5
+          7
          /
         6
        /
-      7
+      5
      /
-    8
+    4
    /
-  9
+  3
  /
-10
+2
 ```
 
 ---
 
-### 测试用例 3：平衡树
+### 测试用例 3 (平衡树)
 
-#### 输入：
+#### 输入文件 `t3Input.txt`：
 ```
-Enter the number of nodes in the tree: 9
-Enter 9 values for the tree:
-5 3 8 2 4 7 9 1 6
-Enter 9 values for the array:
-6 8 3 9 7 4 5 10 2
+9
+5
+3
+8
+2
+4
+7
+9
+1
+6
+6
+4
+9
+3
+5
+8
+10
+7
+2
 ```
 
-#### 输出：
+#### 期望输出文件 `t3Exp.txt`：
 ```
 Original Tree:
         5
@@ -189,55 +261,25 @@ Reconstructed Tree:
        / \
       /   \
      /     \
-    8       3
+    4       9
    / \     / \
-  9   7   4   2
+  3   5   8  10
  /       /
-10      5
+2       7
 ```
 
 ---
 
-## 编译与运行
+## 测试运行
 
-### `Makefile`
+运行以下脚本以验证测试用例是否通过：
 
-使用以下 `Makefile` 编译和运行程序：
-
-```makefile
-# Compiler and flags
-CC = clang
-CFLAGS = -Wall -Werror -g -fsanitize=address,leak,undefined
-
-# Source files
-SRC = main.c bst.c bstReplace.c
-
-# Target binary
-TARGET = main
-
-.PHONY: all clean
-
-# Default target
-all: $(TARGET)
-
-# Build target: compile and link in one step
-$(TARGET):
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
-
-# Clean build files
-clean:
-	rm -rf $(TARGET) *.dSYM
+```bash
+./run_test.sh
+```
+或者
+```bash
+bash run_test.sh
 ```
 
----
 
-### 测试运行
-
-   ```bash
-   $ bash test.sh
-   ```
-
-
-
-
-如果需要进一步优化或增加新功能，请随时联系！

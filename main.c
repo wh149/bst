@@ -37,7 +37,7 @@ int main() {
     }
 
     // 替换原始树中的值
-    bstInOrderReplace(tree, arr);
+    bstInOrderReplace(tree, arr, n);
 
     // 显示重新构建的树
     printf("\nReconstructed Tree:\n");
