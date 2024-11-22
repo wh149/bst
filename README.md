@@ -233,29 +233,11 @@ clean:
 
 ### 测试运行
 
-1. 编译程序：
    ```bash
-   make
+   $ ./test.sh
    ```
 
-2. 运行程序：
-   ```bash
-   ./main < test_input.txt > test_output.txt
-   ```
 
-3. 比较结果：
-   ```bash
-   diff test_output.txt expected_output.txt
-   ```
 
----
-
-### 扩展任务
-
-- 支持动态输入大小，不需要预先指定节点数。
-- 增加异常处理（例如：输入数组与树节点数量不匹配）。
-- 提供更多复杂的树结构测试。
-
---- 
 
 如果需要进一步优化或增加新功能，请随时联系！
